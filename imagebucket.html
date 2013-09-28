@@ -1,0 +1,36 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" media="screen" href="photoslider.css" />  
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="photoslider.js"></script>
+</head>
+<body>
+<div class="photoslider" id="default"></div>  
+  	<script type="text/javascript">  
+		$(document).ready(function(){  
+		    //change the 'baseURL' to reflect the host and or path to your images  
+		    //FOTO.Slider.baseURL = 'http://example.com/path/';  
+		  
+		    //set images by filling our bucket directly  
+		    FOTO.Slider.bucket = {  
+		        'default': {  
+		            0: {'thumb': 't_0.jpg', 'main': '0.jpg', 'caption': 'Opie'},  
+		            1: {'thumb': 't_1.jpg', 'main': '1.jpg'},  
+		            2: {'thumb': 't_2.jpg', 'main': '2.jpg', 'caption': 'Trash the Dress'},  
+		            3: {'thumb': 't_3.jpg', 'main': '3.jpg'}  
+		        }  
+		    };  
+		});  
+	</script> 
+	<script type="text/javascript">  
+    $(document).ready(function(){  
+        var ids = new Array(0,1,2,3);  
+        FOTO.Slider.importBucketFromIds('default',ids);  
+        FOTO.Slider.reload('default');  
+        FOTO.Slider.preloadImages('default');  
+        FOTO.Slider.enableSlideshow('default'); 
+        FOTO.Slider.play('default'); 
+    	});  
+	</script>  
+</body>
+</html>
